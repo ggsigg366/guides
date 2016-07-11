@@ -45,7 +45,7 @@ end
 Use empty lines between defs and to break up a method into logical paragraphs.
 
 ````
-def some_method
+def someMethod
   data = initialize(options)
 
   data.manipulate!
@@ -53,7 +53,7 @@ def some_method
   data.result
 end
 
-def some_method
+def someMethod
   result
 end
 ````
@@ -64,12 +64,12 @@ resistant to refactoring changes.
 ````
 class TestClass
   # bad
-  def TestClass.some_method
+  def TestClass.someMethod
     # body omitted
   end
 
   # good
-  def self.some_other_method
+  def self.someOtherMethod
     # body omitted
   end
 end
@@ -82,26 +82,26 @@ attributes.
 class TestClass
   # bad
   class << self
-    def first_method
+    def firstMethod
       # body omitted
     end
 
-    def second_method_etc
+    def secondMethodEtc
       # body omitted
     end
   end
 
   # good
   class << self
-    attr_accessor :per_page
-    alias_method :nwo, :find_by_name_with_owner
+    attrAccessor :perPage
+    aliasMethod :nwo, :find_by_name_with_owner
   end
 
-  def self.first_method
+  def self.firstMethod
     # body omitted
   end
 
-  def self.second_method_etc
+  def self.secondMethodEtc
     # body omitted
   end
 end
@@ -112,12 +112,12 @@ they apply to. Leave one blank line above them.
 
 ````
 class SomeClass
-  def public_method
+  def publicMethod
     # ...
   end
 
   private
-  def private_method
+  def privateMethod
     # ...
   end
 end
@@ -127,10 +127,10 @@ Prefer string interpolation instead of string concatenation:
 
 ````
 # bad
-email_with_name = user.name + " <" + user.email + ">"
+emailWithName = user.name + " <" + user.email + ">"
 
 # good
-email_with_name = "#{user.name} <#{user.email}>"
+emailWithName = "#{user.name} <#{user.email}>"
 ````
 
 Prefer double-quoted strings. Interpolation and escaped characters will
